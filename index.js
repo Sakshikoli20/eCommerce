@@ -3,9 +3,8 @@ let express = require("express");
 let app = express();
 const Port= 8000;
 
-const routes = require("./Route/user");
-
-app.use(routes)
+const user = require("./Route/user");
+app.use(user)
 
 // app.get("/user/:id", (req, res) => {
 //     if{
@@ -14,6 +13,12 @@ app.use(routes)
 //     return res.send("user doesnt exist");
 //     }
 // )
+
+const routeProduct = require("./Route/product");
+app.use(routeProduct)
+
+const routeOrders = require("./Route/order");
+app.use(routeOrders)
 
 app.listen(Port, () => {
     console.log("Server is running on port ") + `${Port}` });

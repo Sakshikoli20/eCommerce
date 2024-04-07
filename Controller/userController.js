@@ -1,7 +1,10 @@
-const express = require('express');
-
-const getUser = (req, res ) => {
+getUser = (req, res ) => {
     res.send("User Found");
 }
 
-module.exports = getUser;
+postUser = (req, res) =>{
+    // res.send("User Createdhgvygvhgv")
+    res.status(201).send("User Created")
+}
+
+module.exports = {getUser, postUser};
